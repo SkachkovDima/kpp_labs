@@ -45,12 +45,9 @@ public class Block extends Pane {
             if (flagRoute) {
                 if (this.getTranslateX() - startX < 3 * Game.BLOCK_SIZE_X) {
                     this.setTranslateX(this.getTranslateX() + 2);
-                    if (player.getTranslateX() >= this.getTranslateX() -
-                            Game.NINJA_SIZE_Y / 2 &&
-                            player.getTranslateX() <= this.getTranslateX() +
-                                    Game.BLOCK_SIZE_X -Game.NINJA_SIZE_Y / 2
-                            && player.getTranslateY() == this.getTranslateY() -
-                            Game.NINJA_SIZE_X - 1) {
+                    if (player.getTranslateX() >= this.getTranslateX() - Game.NINJA_SIZE_Y / 2 &&
+                            player.getTranslateX() <= this.getTranslateX() + Game.BLOCK_SIZE_X -Game.NINJA_SIZE_Y / 2
+                            && player.getTranslateY() == this.getTranslateY() - Game.NINJA_SIZE_X - 1) {
                         player.setTranslateX(player.getTranslateX() + 2);
                     }
                 } else {
@@ -59,12 +56,9 @@ public class Block extends Pane {
             } else {
                 if (this.getTranslateX() > startX) {
                     this.setTranslateX(this.getTranslateX() - 2);
-                    if (player.getTranslateX() >= this.getTranslateX() -
-                            Game.NINJA_SIZE_Y / 2 &&
-                            player.getTranslateX() <= this.getTranslateX() +
-                                    Game.BLOCK_SIZE_X -Game.NINJA_SIZE_Y / 2
-                            && player.getTranslateY() == this.getTranslateY() -
-                            Game.NINJA_SIZE_X - 1) {
+                    if (player.getTranslateX() >= this.getTranslateX() - Game.NINJA_SIZE_Y / 2 &&
+                            player.getTranslateX() <= this.getTranslateX() + Game.BLOCK_SIZE_X -Game.NINJA_SIZE_Y / 2
+                            && player.getTranslateY() == this.getTranslateY() - Game.NINJA_SIZE_X - 1) {
                         player.setTranslateX(player.getTranslateX() - 2);
                     }
                 } else {

@@ -25,8 +25,7 @@ public class Ninja extends Pane{
         imageView.setFitHeight(49);
         imageView.setFitWidth(40);
         imageView.setViewport(new Rectangle2D(offsetX,offsetY,width,height));
-        animation = new SpriteAnimation(this.imageView,Duration.millis(DURATION_TIME),
-                count,columns,offsetX,offsetY,width,height);
+        animation = new SpriteAnimation(this.imageView,Duration.millis(DURATION_TIME),count,columns,offsetX,offsetY,width,height);
         getChildren().addAll(this.imageView);
     }
 

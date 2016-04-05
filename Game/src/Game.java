@@ -24,7 +24,6 @@ public class Game extends Application {
     public static final int BACKGROUND_SIZE_Y = 620;
     public static final int BACKGROUND_CHANGE = 640;
     public static final int SCENE_SIZE = 1200;
-    public static final int HIGH = 45;
 
     public static Pane appRoot = new Pane();
     public static Pane gameRoot = new Pane();
@@ -35,7 +34,8 @@ public class Game extends Application {
     int levelNumber = 0;
     private int levelWidth = 14*BLOCK_SIZE_Y;
 
-    private void initContent(){
+    private void initContent(){  // разделить на две. Надо чтобы контент обновлялся, но переменные не переприсваивались
+                                 // тысячу раз
         ImageView backgroundIV = new ImageView(backgroundImg);
         backgroundIV.setFitHeight(BACKGROUND_SIZE_Y);
         backgroundIV.setFitWidth(BACKGROUND_SIZE_X);
@@ -48,12 +48,10 @@ public class Game extends Application {
                     case '0':
                         break;
                     case '1':
-                        Block platformFloor = new Block(Block.BlockType.PLATFORM,
-                                j * BLOCK_SIZE_X, i * HIGH);
+                        Block platformFloor = new Block(Block.BlockType.PLATFORM, j * BLOCK_SIZE_X, i * 45);
                         break;
                     case '2':
-                        Block brick = new Block(Block.BlockType.MOVE_PLATFORM,
-                                j*BLOCK_SIZE_X,i * HIGH);
+                        Block brick = new Block(Block.BlockType.MOVE_PLATFORM, j*BLOCK_SIZE_X,i * 45);
                         break;
                 }
             }
