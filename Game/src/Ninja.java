@@ -16,6 +16,7 @@ public class Ninja extends Pane{
     int offsetY = 0;
     double width = 39.5;
     int height = 49;
+    public static int DURATION_TIME = 600;
     public SpriteAnimation animation;
     public Point2D playerVelocity = new Point2D(0,0);
     private boolean canJump = true;
@@ -24,7 +25,7 @@ public class Ninja extends Pane{
         imageView.setFitHeight(49);
         imageView.setFitWidth(40);
         imageView.setViewport(new Rectangle2D(offsetX,offsetY,width,height));
-        animation = new SpriteAnimation(this.imageView,Duration.millis(600),count,columns,offsetX,offsetY,width,height);
+        animation = new SpriteAnimation(this.imageView,Duration.millis(DURATION_TIME),count,columns,offsetX,offsetY,width,height);
         getChildren().addAll(this.imageView);
     }
 

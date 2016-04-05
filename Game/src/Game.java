@@ -15,11 +15,15 @@ public class Game extends Application {
     private HashMap<KeyCode,Boolean> keys = new HashMap<>();
     private int i;
 
-    Image backgroundImg = new Image(getClass().getResourceAsStream("white.jpg"));
+    Image backgroundImg = new Image(getClass().getResourceAsStream("background.jpg"));
     public static final int BLOCK_SIZE_X = 76;
     public static final int BLOCK_SIZE_Y = 17;
     public static final int NINJA_SIZE_Y = 40;
     public static final int NINJA_SIZE_X = 49;
+    public static final int BACKGROUND_SIZE_X = 2560;
+    public static final int BACKGROUND_SIZE_Y = 620;
+    public static final int BACKGROUND_CHANGE = 640;
+    public static final int SCENE_SIZE = 1200;
 
     public static Pane appRoot = new Pane();
     public static Pane gameRoot = new Pane();
@@ -33,8 +37,8 @@ public class Game extends Application {
     private void initContent(){  // разделить на две. Надо чтобы контент обновлялся, но переменные не переприсваивались
                                  // тысячу раз
         ImageView backgroundIV = new ImageView(backgroundImg);
-        backgroundIV.setFitHeight(14*45);
-        backgroundIV.setFitWidth(8*BLOCK_SIZE_X);
+        backgroundIV.setFitHeight(BACKGROUND_SIZE_Y);
+        backgroundIV.setFitWidth(BACKGROUND_SIZE_X);
 
         levelWidth = WorldInformation.levels[levelNumber][0].length()*BLOCK_SIZE_X;
         for(int i = 0; i < WorldInformation.levels[levelNumber].length; i++){
@@ -59,9 +63,9 @@ public class Game extends Application {
         player.setTranslateY(400);
         player.translateXProperty().addListener((obs,old,newValue)->{
             int offset = newValue.intValue();
-            if(offset>640 && offset<levelWidth-640){
-                gameRoot.setLayoutX(-(offset-640));
-                backgroundIV.setLayoutX(-(offset-640));
+            if(offset>BACKGROUND_CHANGE && offset<levelWidth-BACKGROUND_CHANGE){
+                gameRoot.setLayoutX(-(offset-BACKGROUND_CHANGE));
+                backgroundIV.setLayoutX(-(offset-BACKGROUND_CHANGE));
             }
         });
         gameRoot.getChildren().add(player);
@@ -98,7 +102,7 @@ public class Game extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         initContent();
-        Scene scene = new Scene(appRoot,1200,620);
+        Scene scene = new Scene(appRoot,SCENE_SIZE,BACKGROUND_SIZE_Y);
         scene.setOnKeyPressed(event-> keys.put(event.getCode(), true));
         scene.setOnKeyReleased(event -> {
             keys.put(event.getCode(), false);
