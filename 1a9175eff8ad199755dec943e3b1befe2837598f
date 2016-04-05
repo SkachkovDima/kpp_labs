@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_5131b3eb",
+        "filename": "Block.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1007767
+      },
+      "writtenOn": "2016-04-05T22:43:24Z",
+      "side": 1,
+      "message": "use define for values \u002773\u0027 , \u002717\u0027",
+      "revId": "1a9175eff8ad199755dec943e3b1befe2837598f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_314d0f73",
+        "filename": "Game.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1007767
+      },
+      "writtenOn": "2016-04-05T22:43:24Z",
+      "side": 1,
+      "message": "use english language in comments",
+      "revId": "1a9175eff8ad199755dec943e3b1befe2837598f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_d15b832d",
+        "filename": "Ninja.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1007767
+      },
+      "writtenOn": "2016-04-05T22:43:24Z",
+      "side": 1,
+      "message": "use your define \u0027height\u0027 instead of value \u002749\u0027",
+      "revId": "1a9175eff8ad199755dec943e3b1befe2837598f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_b1411f3c",
+        "filename": "Ninja.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1007767
+      },
+      "writtenOn": "2016-04-05T22:43:24Z",
+      "side": 1,
+      "message": "create define",
+      "revId": "1a9175eff8ad199755dec943e3b1befe2837598f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_913e1bb7",
+        "filename": "Ninja.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1007767
+      },
+      "writtenOn": "2016-04-05T22:43:24Z",
+      "side": 1,
+      "message": "create define",
+      "revId": "1a9175eff8ad199755dec943e3b1befe2837598f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_714b975a",
+        "filename": "Ninja.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1007767
+      },
+      "writtenOn": "2016-04-05T22:43:24Z",
+      "side": 1,
+      "message": "define",
+      "revId": "1a9175eff8ad199755dec943e3b1befe2837598f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
