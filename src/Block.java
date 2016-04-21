@@ -15,6 +15,7 @@ public class Block extends Pane {
   int platformType;
   public static final int BLOCK_SPEED = 2;
   public static final int MOVE_BLOCK_LENGHT = 3;
+
   public Block(BlockType blockType, int x, int y) {
     block = new ImageView(blocksImg);
     block.setFitWidth(Game.BLOCK_SIZE_X);

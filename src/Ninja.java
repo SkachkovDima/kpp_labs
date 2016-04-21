@@ -29,8 +29,8 @@ public class Ninja extends Pane {
   private boolean canJump = true;
 
   public Ninja() {
-    imageView.setFitHeight(Game.NINJA_SIZE_X);
-    imageView.setFitWidth(Game.NINJA_SIZE_Y);
+    imageView.setFitHeight(Game.NINJA_SIZE_Y);
+    imageView.setFitWidth(Game.NINJA_SIZE_X);
     imageView.setViewport(new Rectangle2D(offsetX, offsetY, width, height));
     animation = new SpriteAnimation(this.imageView,
         Duration.millis(DURATION_TIME),
@@ -45,7 +45,7 @@ public class Ninja extends Pane {
         if (this.getBoundsInParent().intersects(
             platform.getBoundsInParent())) {
           if (movingRight) {
-            if (this.getTranslateX() + Game.NINJA_SIZE_Y ==
+            if (this.getTranslateX() + Game.NINJA_SIZE_X ==
                 platform.getTranslateX()) {
               this.setTranslateX(this.getTranslateX() - 1);
               return;
@@ -69,7 +69,7 @@ public class Ninja extends Pane {
       for (Block platform : Game.platforms) {
         if (getBoundsInParent().intersects(platform.getBoundsInParent())) {
           if (movingDown) {
-            if (this.getTranslateY() + Game.NINJA_SIZE_X ==
+            if (this.getTranslateY() + Game.NINJA_SIZE_Y ==
                 platform.getTranslateY()) {
               this.setTranslateY(this.getTranslateY() - 1);
               canJump = true;
