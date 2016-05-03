@@ -1,9 +1,7 @@
 import javafx.animation.Animation;
-import javafx.animation.FadeTransition;
 import javafx.animation.FillTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
@@ -20,6 +18,18 @@ import java.nio.file.*;
 
 
 public class Menu extends Pane{
+  public static final double OPACITY_BACKGROUND = 0.6;
+  public static final double OPACITY_BUTTON = 0.5;
+  public static final double BUTTON_DURATION = 0.5;
+  public static final int LIST_VIEW_COORDINATE_X = 400;
+  public static final int LIST_VIEW_WIDTH = 400;
+  public static final int LIST_VIEW_COORDINATE_Y = 102;
+  public static final int LIST_VIEW_HIGH = 500;
+  public static final int BUTTON_WIDTH = 200;
+  public static final int BUTTON_HIGH = 20;
+  public static final String FONT = "Arial";
+  public static final int FONT_SIZE = 14;
+
   static SubMenu menuBox, mainMenu;
   ListView<String> listView;
   ObservableList<String> fileNames;
@@ -50,7 +60,7 @@ public class Menu extends Pane{
 
     Rectangle bg = new Rectangle(Game.SCENE_SIZE,
         Game.BACKGROUND_SIZE_Y, Color.BLACK);
-    bg.setOpacity(0.6);
+    bg.setOpacity(OPACITY_BACKGROUND);
     menuBox = mainMenu;
     this.getChildren().addAll(bg, menuBox, listView);
 
@@ -104,7 +114,6 @@ public class Menu extends Pane{
       Game.changeLevel = true;
       this.setVisible(false);
     });
-
   }
 
   private void mediumButtonClicked(MenuItem medium){
@@ -163,15 +172,16 @@ public class Menu extends Pane{
 
   private static class MenuItem extends StackPane {
     public MenuItem(String name) {
-      Rectangle bg = new Rectangle(200, 20, Color.WHITE);
-      bg.setOpacity(0.5);
+      Rectangle bg = new Rectangle(BUTTON_WIDTH, BUTTON_HIGH, Color.WHITE);
+      bg.setOpacity(OPACITY_BUTTON);
 
       Text text = new Text(name);
       text.setFill(Color.WHITE);
-      text.setFont(Font.font("Arial", FontWeight.BOLD, 14));
+      text.setFont(Font.font(FONT, FontWeight.BOLD, FONT_SIZE));
       setAlignment(Pos.CENTER);
       getChildren().addAll(bg, text);
-      FillTransition st = new FillTransition(Duration.seconds(0.5), bg);
+      FillTransition st = new FillTransition(
+          Duration.seconds(BUTTON_DURATION), bg);
       setOnMouseEntered(event -> {
         st.setFromValue(Color.DARKGRAY);
         st.setToValue(Color.DARKGOLDENROD);
@@ -189,10 +199,10 @@ public class Menu extends Pane{
   private void createListView(){
     listView = new ListView<>();
     listView.setVisible(false);
-    listView.setTranslateX(400);
-    listView.setPrefWidth(400);
-    listView.setTranslateY(102);
-    listView.setPrefHeight(500);
+    listView.setTranslateX(LIST_VIEW_COORDINATE_X);
+    listView.setPrefWidth(LIST_VIEW_WIDTH);
+    listView.setTranslateY(LIST_VIEW_COORDINATE_Y);
+    listView.setPrefHeight(LIST_VIEW_HIGH);
     fileNames = FXCollections.observableArrayList();
   }
 

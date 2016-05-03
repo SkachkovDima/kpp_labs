@@ -161,12 +161,10 @@ public class Game extends Application {
 
     if(autoGameFlag) {
       bot.play();
-      return;
     }
 
     if(humanGameFlag){
       humanGame();
-      return;
     }
   }
 
