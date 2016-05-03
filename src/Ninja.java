@@ -43,16 +43,16 @@ public class Ninja extends Pane {
     for (int i = 0; i < Math.abs(value); i++) {
       for (Node platform : Game.platforms) {
         if (this.getBoundsInParent().intersects(
-            platform.getBoundsInParent())) {
+                platform.getBoundsInParent())) {
           if (movingRight) {
-            if (this.getTranslateX() + Game.NINJA_SIZE_X ==
-                platform.getTranslateX()) {
+            if (this.getTranslateX() ==
+                    platform.getTranslateX()) {
               this.setTranslateX(this.getTranslateX() - 1);
               return;
             }
           } else {
             if (this.getTranslateX() == platform.getTranslateX() +
-                Game.BLOCK_SIZE_X) {
+                    Block.BLOCK_SIZE_X) {
               this.setTranslateX(this.getTranslateX() + 1);
               return;
             }
@@ -60,6 +60,10 @@ public class Ninja extends Pane {
         }
       }
       this.setTranslateX(this.getTranslateX() + (movingRight ? 1 : -1));
+    }
+    if (this.getTranslateX() > Game.gameRoot.getTranslateX() +
+            Game.SCENE_SIZE / 2) {
+      Game.gameRoot.setTranslateX(Game.gameRoot.getTranslateX() - value);
     }
   }
 
@@ -77,7 +81,7 @@ public class Ninja extends Pane {
             }
           } else {
             if (this.getTranslateY() == platform.getTranslateY() +
-                Game.BLOCK_SIZE_Y) {
+                Block.BLOCK_SIZE_Y) {
               this.setTranslateY(this.getTranslateY() + 1);
               playerVelocity = new Point2D(POINT_2D_X, POINT_2D_Y);
               return;
@@ -87,12 +91,19 @@ public class Ninja extends Pane {
       }
       this.setTranslateY(this.getTranslateY() + (movingDown ? 1 : -1));
       if (this.getTranslateY() > MOVING_DOWN) {
-        this.setTranslateX(START_X);
-        this.setTranslateY(START_Y);
-        Game.gameRoot.setLayoutX(START_X);
+        setOnStart();
       }
     }
   }
+
+  public void setOnStart() {
+    this.setTranslateX(START_X);
+    this.setTranslateY(START_Y);
+    Game.gameRoot.setTranslateX(START_X);
+    Bot.blockCounter = 0;
+    Game.levelNumber = 0;
+  }
+
 
   public void jumpPlayer() {
     if (canJump) {
