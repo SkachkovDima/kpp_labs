@@ -119,7 +119,3 @@ public class Bot{
     }
   }
 }
-
-
-
-//https://docs.google.com/document/d/1TthzE-U4g_qGZkwnwqu6SHquoahFELgAkJ0OdqlO92k/edit
